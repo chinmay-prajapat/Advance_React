@@ -9,7 +9,12 @@ const UseEffectCleanup = () => {
     setSize(window.innerWidth);
   };
   useEffect(() => {
+    console.log("useEffect");
     window.addEventListener("resize", checkSize);
+    return () => {
+      console.log("clean up");
+      window.removeEventListener("resize", checkSize);
+    };
   });
   console.log(size);
   return (
