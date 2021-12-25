@@ -46,7 +46,7 @@ const ControlledInputs = () => {
       {people.map((item) => {
         const { id, firstName, email } = item;
         return (
-          <div key={id}>
+          <div className="item" key={id}>
             <h3>{firstName}</h3>
             <p>{email}</p>
           </div>
