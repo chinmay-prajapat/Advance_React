@@ -14,6 +14,11 @@ const UseStateCounter = () => {
   const reset = () => {
     setValue(0);
   };
+  const changeLater = () => {
+    setTimeout(() => {
+      setValue((preValue) => preValue + 1);
+    }, 2000);
+  };
   return (
     <div>
       <section style={{ margin: "4rem 0" }}>
@@ -28,6 +33,11 @@ const UseStateCounter = () => {
         <button className="btn" onClick={increment}>
           increase
         </button>
+        <div>
+          <h2>Regular Counter</h2>
+          <h1>{value}</h1>
+          <button onClick={changeLater}>Change later</button>
+        </div>
       </section>
     </div>
   );
